@@ -1,7 +1,8 @@
-pandas
+pandas==2.2.3
 numpy
 seaborn
 matplotlib
-scikit-learn
+scikit-learn==1.6.1
 pickle
 imblearn
+python==3.10
