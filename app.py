@@ -36,10 +36,10 @@ st.subheader('Enter customer details')
 
 ## insert form to get user data or customer data.
 with st.form('fill details'):
-    gender = st.radio("Select your gender:",["Male","Female"])
-    senior_citizen = st.radio("Are you senior citizen, 'Yes' means 1 and 'No' means 0",["Yes","No"])
+    gender = st.radio("Select customer gender:",["Male","Female"])
+    senior_citizen = st.radio("Is customer senior citizen, 'Yes' means 1 and 'No' means 0",["Yes","No"])
     senior_cit = senior_citizen # we will use it, it will help to show user filled data.
-    dependent = st.radio("Do you have any dependent:", ["Yes","No"])
+    dependent = st.radio("Has any any dependent on customer:", ["Yes","No"])
 
     tenure = st.number_input("Enter customer tenure: ",min_value=0) # age or time never will be negative. handle it use minimum value is 0.
     phone_service = st.radio("Phone service: ",["Yes","No"])
@@ -47,13 +47,13 @@ with st.form('fill details'):
     InternetServices = st.radio("Internet Services:", ['DSL', 'Fiber optic', 'No'])
 
     TechSupport = st.radio("Tech support:", ['No', 'Yes', 'No internet service'])
-    Onlinebackup = st.radio("Do you have online Backup: ", ['Yes', 'No', 'No internet service'])
-    streaming_tv = st.radio("You are streaming Tv:",["Yes","No"])
+    Onlinebackup = st.radio("Have Customer online Backup: ", ['Yes', 'No', 'No internet service'])
+    streaming_tv = st.radio("Customer is streaming Tv:",["Yes","No"])
     Contract = st.radio("Contract time duration:", ['Month-to-month', 'One year', 'Two year'])
 
     PaymentMethod = st.radio("select Payment Method:",['Electronic check', 'Mailed check', 'Bank transfer (automatic)',
                                                        'Credit card (automatic)'])
-    monthly_charges = st.number_input("Enter your customer Monthly charges: ",min_value=0)
+    monthly_charges = st.number_input("Enter customer Monthly charges: ",min_value=0)
     total_charges = st.number_input("Enter customer Total Charges: ", min_value=0)
     submitted = st.form_submit_button("Submit")
 
@@ -130,3 +130,4 @@ if submitted: # submit
     ## Show model prediction
     pred = prediction(model.predict(data))
     st.write(pred)
+
